@@ -4,25 +4,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../css/style.css">
     <title>Detalhes do Produto - Minha Loja</title>
 </head>
 
 <body>
 
-    <header class="topo">
-        <div class="logo">Minha Loja</div>
-        <nav class="menu">
-            <a href="index.html">Home</a>
-            <a href="#">Produtos</a>
-            <a href="#">Categorias</a>
-            <a href="#">Contato</a>
-        </nav>
-        <div class="acoes">
-            <a href="login.html"><button class="btn-login">Login</button></a>
-            <button class="btn-carrinho">Carrinho</button>
-        </div>
-    </header>
+    <div id="header-slot"></div>
 
     <aside class="sidebar">
         <ul class="sidebar-menu">
@@ -53,7 +41,7 @@
         </div>
     </main>
 
-    <script>
+    <script src="../scripts/main.js">
         document.querySelectorAll(".menu-toggle").forEach(btn => {
             btn.addEventListener("click", () => {
                 const submenu = btn.nextElementSibling;
