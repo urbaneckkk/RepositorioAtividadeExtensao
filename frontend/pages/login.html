@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Looma - Login</title>
+    <link rel="stylesheet" href="../css/login.css">
+</head>
+
+<body>
+    <div class="login-wrapper">
+        <div class="login-banner">
+            <h1>Bem-vindo ao Looma</h1>
+        </div>
+
+        <div class="login-form-container">
+            <form id="loginForm" class="login-form">
+                <h2>Entrar</h2>
+
+                <div class="input-group">
+                    <input type="text" id="username" name="username" required>
+                    <label for="username">Usuário</label>
+                </div>
+
+                <div class="input-group">
+                    <input type="password" id="password" name="password" required>
+                    <label for="password">Senha</label>
+                </div>
+
+                <button type="submit">Login</button>
+                <p class="error-message" id="errorMessage"></p>
+            </form>
+        </div>
+    </div>
+
+    <script src="../scripts/login.js"></script>
+</body>
+
+</html>
