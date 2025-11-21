@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Detalhes do Produto - Minha Loja</title>
+</head>
+
+<body>
+
+    <header class="topo">
+        <div class="logo">Minha Loja</div>
+        <nav class="menu">
+            <a href="index.html">Home</a>
+            <a href="#">Produtos</a>
+            <a href="#">Categorias</a>
+            <a href="#">Contato</a>
+        </nav>
+        <div class="acoes">
+            <a href="login.html"><button class="btn-login">Login</button></a>
+            <button class="btn-carrinho">Carrinho</button>
+        </div>
+    </header>
+
+    <aside class="sidebar">
+        <ul class="sidebar-menu">
+            <li class="menu-item">
+                <button class="menu-toggle">Categoria 1</button>
+                <ul class="submenu">
+                    <li>Item 1A</li>
+                    <li>Item 1B</li>
+                </ul>
+            </li>
+        </ul>
+    </aside>
+
+    <main class="content">
+        <div class="product-detail-container">
+            <div class="detail-left">
+                <img src="https://picsum.photos/500/500?random=10" alt="Produto Grande">
+            </div>
+            <div class="detail-right">
+                <h1>Produto Genérico Premium</h1>
+                <span class="price">R$ 299,90</span>
+                <p class="description">
+                    Este é um produto de alta qualidade, perfeito para suas necessidades.
+                    Feito com materiais duráveis e design ergonômico. Aproveite a oferta!
+                </p>
+                <button class="btn-buy">Comprar Agora</button>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        document.querySelectorAll(".menu-toggle").forEach(btn => {
+            btn.addEventListener("click", () => {
+                const submenu = btn.nextElementSibling;
+                submenu.classList.toggle("open");
+            });
+        });
+    </script>
+
+</body>
+
+</html>
