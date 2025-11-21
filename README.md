@@ -1,13 +1,20 @@
-# Atividade de extensão dev+git
+# Atividade de Extensão Dev+Git
 
-Nome do ecommerce (nao definimos ainda)
+## Ecommerce Looma
 
-Andre Luiz Pedroso Urbaneck - lider
-Guilherme Kais da Silva
-João Otávio Pauluk Trindade
-Elias Borges Neckel
-Felipe Eidy Toyama
+### Equipe
+- **Andre Luiz Pedroso Urbaneck** 
+- **Guilherme Kais da Silva**  
+- **João Otávio Pauluk Trindade**  
+- **Elias Borges Neckel**  
+- **Felipe Eidy Toyama**  
 
+### Tecnologias Utilizadas
+- JavaScript (JS)
 
-tecnologias utilizadas: (nao definido)
-tipo de licença: (nao definido)
+### Tipo de Licença
+- Não definido
+
+### Acesso ao Projeto
+🔗 [Clique aqui para acessar](https://repositorioatividadeextensao.onrender.com/)
+ 
