@@ -291,3 +291,66 @@
     transform: scale(1.05);
     box-shadow: 0 4px 12px rgba(40, 167, 69, 0.3);
 }
+
+.footer {
+    background: #1b1b1b;
+    padding: 25px 0;
+    margin-top: 60px;
+    box-shadow: 0 -2px 6px rgba(0,0,0,0.25);
+    color: #fff;
+    text-align: center;
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    align-items: center;
+}
+
+.social-links {
+    display: flex;
+    gap: 20px;
+}
+
+.social-links a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 26px;
+    display: inline-flex;
+    transition: 0.25s;
+}
+
+.social-links a:hover {
+    transform: scale(1.18);
+    color: #ff9800;
+}
+
+/* ---- Ícones simples em CSS (sem libs externas) ---- */
+
+.icon {
+    width: 28px;
+    height: 28px;
+    display: inline-block;
+    mask-size: cover;
+    -webkit-mask-size: cover;
+    background-color: currentColor;
+}
+
+/* Instagram */
+.icon.ig {
+    mask-image: url('https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/instagram.svg');
+    -webkit-mask-image: url('https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/instagram.svg');
+}
+
+/* Facebook */
+.icon.fb {
+    mask-image: url('https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/facebook.svg');
+    -webkit-mask-image: url('https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/facebook.svg');
+}
+
+/* WhatsApp */
+.icon.wa {
+    mask-image: url('https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/whatsapp.svg');
+    -webkit-mask-image: url('https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/whatsapp.svg');
+}
