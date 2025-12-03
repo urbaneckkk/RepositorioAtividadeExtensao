@@ -4,6 +4,13 @@
     box-sizing: border-box;
 }
 
+body {
+    display: flex;
+    min-height: 100vh;
+    background: #fafafa;
+    flex-direction: column;
+}
+
 .topo {
     width: 100%;
     height: 100px;
@@ -13,16 +20,15 @@
     padding: 0 60px;
     background: #1b1b1b;
     color: #fff;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
-    position: sticky;
+    position: fixed;
     top: 0;
-    z-index: 100;
+    left: 0;
+    z-index: 9999;
 }
 
 .logo {
     font-size: 32px;
     font-weight: bold;
-    letter-spacing: 1px;
 }
 
 .menu a {
@@ -30,23 +36,14 @@
     color: #fff;
     text-decoration: none;
     font-size: 18px;
-    font-weight: 500;
-    transition: 0.2s;
-}
-
-.menu a:hover {
-    color: #ff9800;
 }
 
 .acoes button {
-    margin-left: 15px;
     padding: 12px 20px;
     border: none;
     cursor: pointer;
     border-radius: 6px;
     font-weight: bold;
-    font-size: 16px;
-    transition: 0.2s;
 }
 
 .btn-login {
@@ -59,29 +56,31 @@
     color: #1e1e1e;
 }
 
-.acoes button:hover {
-    transform: scale(1.07);
-}
-
 .sidebar {
-    width: 260px;
+    width: 70px;
     background: #111;
     border-right: 2px solid #ff6600;
-    height: 100vh;
-    padding-top: 100px;
+    height: calc(100vh - 100px);
     position: fixed;
     left: 0;
-    top: 0;
+    top: 100px;
     overflow-y: auto;
-    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.4);
+    transition: width 0.25s;
+    z-index: 150;
+}
+
+.sidebar:hover,
+.sidebar.open {
+    width: 220px;
 }
 
 .sidebar-menu {
     list-style: none;
+    padding-top: 20px;
 }
 
 .menu-item {
-    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    border-bottom: 1px solid rgba(255,255,255,0.08);
 }
 
 .menu-toggle {
@@ -94,16 +93,14 @@
     cursor: pointer;
     font-weight: 600;
     color: #fff;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
     transition: 0.2s;
+    white-space: nowrap;
+    overflow: hidden;
 }
 
 .menu-toggle:hover {
     background: #ff6600;
     color: #000;
-    padding-left: 25px;
 }
 
 .submenu {
@@ -120,20 +117,18 @@
     padding: 12px 0;
     font-size: 15px;
     color: #f0f0f0;
-    cursor: pointer;
-    transition: 0.2s;
-}
-
-.submenu li:hover {
-    color: #ff6600;
-    transform: translateX(4px);
 }
 
 .content {
-    margin-left: 260px;
-    padding: 120px 40px;
-    background: #fafafa;
-    min-height: 100vh;
+    flex: 1;
+    margin-left: 70px;
+    padding: 140px 40px 40px 40px;
+    transition: margin-left 0.25s;
+}
+
+.sidebar:hover ~ .content,
+.sidebar.open ~ .content {
+    margin-left: 220px;
 }
 
 .banner {
@@ -141,13 +136,12 @@
     color: #fff;
     padding: 40px;
     border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
     margin-bottom: 40px;
 }
 
 .products-section h2 {
-    margin-bottom: 20px;
     color: #333;
+    margin-bottom: 20px;
 }
 
 .products-grid {
@@ -160,14 +154,13 @@
     background: #fff;
     border-radius: 10px;
     padding: 20px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
     text-align: center;
     transition: 0.25s;
 }
 
 .product-card:hover {
     transform: translateY(-6px);
-    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.18);
 }
 
 .product-img {
@@ -175,17 +168,6 @@
     height: 160px;
     object-fit: cover;
     border-radius: 8px;
-    margin-bottom: 15px;
-}
-
-.product-card h3 {
-    margin: 10px 0;
-    color: #222;
-}
-
-.product-card p {
-    font-size: 14px;
-    color: #555;
     margin-bottom: 15px;
 }
 
@@ -197,160 +179,5 @@
     border-radius: 6px;
     text-decoration: none;
     font-weight: bold;
-    transition: 0.25s;
 }
 
-.product-btn:hover {
-    background: #e05c00;
-}
-
-
-
-/* --- Página de Detalhes do Produto --- */
-.product-detail-card {
-    background: #fff;
-    border-radius: 12px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
-    padding: 40px;
-    display: flex;
-    gap: 40px;
-    align-items: start;
-    margin-bottom: 60px;
-}
-
-.product-gallery {
-    flex: 1;
-    min-width: 300px;
-}
-
-.product-gallery img {
-    width: 100%;
-    height: auto;
-    border-radius: 8px;
-    border: 1px solid #eee;
-    object-fit: cover;
-}
-
-.product-info {
-    flex: 1.2;
-}
-
-.product-info h1 {
-    font-size: 32px;
-    color: #1b1b1b;
-    margin-bottom: 10px;
-}
-
-.product-sku {
-    font-size: 14px;
-    color: #888;
-    margin-bottom: 20px;
-    display: block;
-}
-
-.product-price {
-    font-size: 36px;
-    font-weight: bold;
-    color: #ff9800;
-    margin-bottom: 20px;
-    display: block;
-}
-
-.product-desc-title {
-    font-weight: bold;
-    margin-bottom: 8px;
-    display: block;
-    color: #333;
-}
-
-.product-description {
-    color: #555;
-    line-height: 1.6;
-    margin-bottom: 30px;
-    font-size: 16px;
-}
-
-
-.btn-buy {
-    background: #28a745;
-    color: white;
-    padding: 15px 40px;
-    font-size: 18px;
-    font-weight: bold;
-    border: none;
-    border-radius: 6px;
-    cursor: pointer;
-    transition: 0.2s;
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-}
-
-.btn-buy:hover {
-    background: #218838;
-    transform: scale(1.05);
-    box-shadow: 0 4px 12px rgba(40, 167, 69, 0.3);
-}
-
-.footer {
-    background: #1b1b1b;
-    padding: 25px 0;
-    margin-top: 60px;
-    box-shadow: 0 -2px 6px rgba(0,0,0,0.25);
-    color: #fff;
-    text-align: center;
-}
-
-.footer-content {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    align-items: center;
-}
-
-.social-links {
-    display: flex;
-    gap: 20px;
-}
-
-.social-links a {
-    text-decoration: none;
-    color: #fff;
-    font-size: 26px;
-    display: inline-flex;
-    transition: 0.25s;
-}
-
-.social-links a:hover {
-    transform: scale(1.18);
-    color: #ff9800;
-}
-
-/* ---- Ícones simples em CSS (sem libs externas) ---- */
-
-.icon {
-    width: 28px;
-    height: 28px;
-    display: inline-block;
-    mask-size: cover;
-    -webkit-mask-size: cover;
-    background-color: currentColor;
-}
-
-/* Instagram */
-.icon.ig {
-    mask-image: url('https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/instagram.svg');
-    -webkit-mask-image: url('https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/instagram.svg');
-}
-
-/* Facebook */
-.icon.fb {
-    mask-image: url('https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/facebook.svg');
-    -webkit-mask-image: url('https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/facebook.svg');
-}
-
-/* WhatsApp */
-.icon.wa {
-    mask-image: url('https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/whatsapp.svg');
-    -webkit-mask-image: url('https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/whatsapp.svg');
-}

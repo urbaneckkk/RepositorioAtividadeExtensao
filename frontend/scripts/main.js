@@ -25,3 +25,17 @@ function loadComponents() {
 }
 
 loadComponents();
+
+document.querySelectorAll(".menu-toggle").forEach(btn => {
+    btn.addEventListener("click", () => {
+        const submenu = btn.nextElementSibling;
+        submenu.classList.toggle("open");
+    });
+});
+
+document.querySelectorAll(".menu-toggle").forEach(btn => {
+    btn.addEventListener("click", () => {
+        const submenu = btn.nextElementSibling;
+        submenu.classList.toggle("open");
+    });
+});
