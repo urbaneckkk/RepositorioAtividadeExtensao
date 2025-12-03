@@ -11,7 +11,7 @@ const headerHTML = `
     </nav>
     <div class="acoes">
         <button class="btn-login" onclick="window.location.href='/frontend/pages/login.html'">Login</button>
-        <button class="btn-carrinho">Carrinho</button>
+        <button class="btn-carrinho" onclick="window.location.href='/frontend/pages/carrinho.html'">Carrinho</button>
     </div>
 </header>
 `;
