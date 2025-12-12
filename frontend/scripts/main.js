@@ -3,18 +3,33 @@
 const headerHTML = `
 <header class="topo">
     <div class="logo">Minha Loja</div>
+
+    <!-- Botão mostrado apenas no mobile -->
+    <button class="btn-mobile-categorias" id="btnMobileCategorias">☰ Categorias</button>
+
+    <!-- Menu desktop normal -->
     <nav class="menu">
         <a href="index.html">Home</a>
-        <a href="/frontend/pages/produtos.html">Produtos</a>
+        <a href="#">Produtos</a>
         <a href="#">Categorias</a>
-        <a href="#">Contato</a>
+        <a href="../pages/contato.html">Contato</a>
     </nav>
+
     <div class="acoes">
-        <button class="btn-login" onclick="window.location.href='/frontend/pages/login.html'">Login</button>
-        <button class="btn-carrinho" onclick="window.location.href='/frontend/pages/carrinho.html'">Carrinho</button>
+        <button onclick="window.location.href='/frontend/pages/login.html'">Login</button>
+        <button onclick="window.location.href='/frontend/pages/carrinho.html'">Carrinho</button>
     </div>
+
+    <!-- Menu mobile -->
+    <nav class="menu-mobile" id="menuCategoriasMobile">
+        <a href="/frontend/pages/produtos.html?cat=roupas">Roupas</a>
+        <a href="/frontend/pages/produtos.html?cat=eletronicos">Eletrônicos</a>
+        <a href="/frontend/pages/produtos.html?cat=acessorios">Acessórios</a>
+        <a href="/frontend/pages/produtos.html?cat=promocoes">Promoções</a>
+    </nav>
 </header>
 `;
+
 
 function loadComponents() {
     const headerSlot = document.getElementById('header-slot');
@@ -65,6 +80,24 @@ document.addEventListener("DOMContentLoaded", function () {
         if (!sidebar) return;
         if (!sidebar.contains(e.target)) {
             document.querySelectorAll(".submenu").forEach(s => s.classList.remove("open"));
+        }
+    });
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+    const btn = document.getElementById("btnMobileCategorias");
+    const menu = document.getElementById("menuCategoriasMobile");
+
+    if (!btn || !menu) return;
+
+    btn.addEventListener("click", () => {
+        menu.style.display = menu.style.display === "block" ? "none" : "block";
+    });
+
+    // Fecha ao clicar fora
+    document.addEventListener("click", (e) => {
+        if (!menu.contains(e.target) && e.target !== btn) {
+            menu.style.display = "none";
         }
     });
 });
