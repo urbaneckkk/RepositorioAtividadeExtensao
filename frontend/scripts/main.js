@@ -10,7 +10,7 @@ const headerHTML = `
     <!-- Menu desktop normal -->
     <nav class="menu">
         <a href="index.html">Home</a>
-        <a href="/frontend/pages/produtos.html">Produtos</a>
+        <a href="#">Produtos</a>
         <a href="#">Categorias</a>
         <a href="#">Contato</a>
     </nav>

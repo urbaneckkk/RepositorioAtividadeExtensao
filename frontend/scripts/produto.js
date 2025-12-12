@@ -19,7 +19,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (!produto) {
         container.innerHTML = `
-            <div class="card-erro fade-in">
+            <div class="card-erro">
                 <h1>❌ Produto não encontrado</h1>
                 <p>O produto solicitado não existe.</p>
                 <a class="btn-voltar" href="../../index.html">Voltar</a>
@@ -29,7 +29,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     container.innerHTML = `
-        <div class="produto-card fade-in">
+        <div class="produto-card">
 
             <img class="produto-img" src="${produto.imagem}" alt="${produto.nome}">
 
@@ -39,7 +39,6 @@ document.addEventListener("DOMContentLoaded", () => {
                 <h3>Preço: R$ ${produto.preco.toFixed(2)}</h3>
 
                 <button class="btn-add">Adicionar ao Carrinho</button>
-                <a class="btn-voltar" href="../../index.html">Voltar</a>
             </div>
 
         </div>
