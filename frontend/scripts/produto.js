@@ -22,7 +22,6 @@ document.addEventListener("DOMContentLoaded", () => {
             <div class="card-erro">
                 <h1>❌ Produto não encontrado</h1>
                 <p>O produto solicitado não existe.</p>
-                <a class="btn-voltar" href="../../index.html">Voltar</a>
             </div>
         `;
         return;
@@ -40,7 +39,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
                 <button class="btn-add">Adicionar ao Carrinho</button>
             </div>
-
         </div>
     `;
 });

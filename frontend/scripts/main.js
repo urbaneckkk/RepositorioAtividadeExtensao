@@ -12,7 +12,7 @@ const headerHTML = `
         <a href="index.html">Home</a>
         <a href="#">Produtos</a>
         <a href="#">Categorias</a>
-        <a href="#">Contato</a>
+        <a href="../pages/contato.html">Contato</a>
     </nav>
 
     <div class="acoes">
